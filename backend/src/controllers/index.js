@@ -1,5 +1,8 @@
-const { registerUserController } = require("./auth-controllers");
+const {
+  registerUserController,
+  getUserController,
+} = require("./auth-controllers");
 
-const allControllers = { registerUserController };
+const allControllers = { registerUserController, getUserController };
 
 module.exports = allControllers;

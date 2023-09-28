@@ -10,10 +10,20 @@ const registerUserController = async (req, res) => {
     };
     const userCreateRequest = new allModels.User(newUser);
     await userCreateRequest.save();
-    return ApiResponse.success(res, userCreateRequest);
+    return ApiResponse.success(res, { user: userCreateRequest });
   } catch (error) {
     return ApiResponse.catchError(res, error);
   }
 };
 
-module.exports = { registerUserController };
+const getUserController = async (req, res) => {
+  try {
+    const user = await allModels.User.findOne({ _id: req.params?.id });
+    return ApiResponse.success(res, { user });
+  } catch (error) {
+    console.log(error);
+    return ApiResponse.catchError(res, error);
+  }
+};
+
+module.exports = { registerUserController, getUserController };
