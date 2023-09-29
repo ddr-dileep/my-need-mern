@@ -1,8 +1,17 @@
 const {
   registerUserController,
-  getUserController,
+  getCurrentUserController,
+  loginUserController,
+  updateUserControllers,
+  deleteUserController,
 } = require("./auth-controllers");
 
-const allControllers = { registerUserController, getUserController };
+const allControllers = {
+  registerUserController,
+  getCurrentUserController,
+  loginUserController,
+  updateUserControllers,
+  deleteUserController,
+};
 
 module.exports = allControllers;
