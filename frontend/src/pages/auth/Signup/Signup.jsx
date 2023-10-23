@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./signup.scss";
 import { registerUserService } from "../../../api/services/auth-services";
-import Loader from "./../../../components/loader/Loader";
-import InputField from "../../../components/input/Input";
-import Button from "../../../components/button/Button";
 import { registerUserFields } from "../constants";
+import Form from "../../../components/form/Form";
+import Heading from "../../../components/heading/Heading";
 
 const Signup = () => {
   const [formData, setFormData] = useState({});
@@ -29,31 +28,21 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-container">
-      {loading && <Loader />}
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        {registerUserFields?.map((item) => {
-          return (
-            <InputField
-              key={item?.name}
-              name={item?.name}
-              id={item?.id}
-              type={item?.type}
-              placeholder={item?.placeholder}
-              value={formData[item?.name] || ""}
-              label={item?.label}
-              onChange={handleInputChange}
-              required={item?.required}
-              disabled={item?.disabled}
-            />
-          );
-        })}
-
-        <Button icon={loading} disabled={loading}>
-          Sign Up
-        </Button>
-      </form>
+    <div className="signup">
+      <div className="signup-container">
+        <Heading className="" title="Sign up" />
+        <Form
+          handleSubmit={handleSubmit}
+          fields={registerUserFields}
+          formValues={formData}
+          handleInputChange={handleInputChange}
+          formButtonIcon={loading}
+          formButtonDisable={loading}
+          formButtonText={"Signup"}
+          formButtonType={"submit"}
+          formButtonClass={"btn btn-primary w-100 text-center"}
+        />
+      </div>
     </div>
   );
 };

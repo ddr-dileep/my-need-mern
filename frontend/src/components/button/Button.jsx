@@ -19,7 +19,7 @@ const Button = (props) => {
       disabled={disabled}
       onClick={onClick}
     >
-      <div className="d-flex gap-2">
+      <div className="d-flex gap-2 justify-content-center align-item-center">
         <div
           className={`spinner-border ${!icon && "d-none"}`}
           role="status"

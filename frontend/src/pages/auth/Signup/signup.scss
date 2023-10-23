@@ -1,0 +1,21 @@
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+
+  &-container {
+    background-color: aliceblue;
+    width: 760px;
+    padding: 60px 90px;
+    box-shadow: 0px 3px 15px 0.01px rgba(83, 66, 66, 0.315);
+    border-radius: 12px;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      padding: 40px 60px;
+    }
+  }
+}
