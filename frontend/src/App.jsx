@@ -1,12 +1,13 @@
-import { useState } from "react";
+import AllRoutes from './AllRoutes'
+import Layout from "./pages/Layout/Layout";
+
 import "./App.css";
-import Signup from "./pages/auth/Signup/Signup";
 
 function App() {
   return (
-    <>
-      <Signup />
-    </>
+    <Layout>
+      <AllRoutes />
+    </Layout>
   );
 }
 

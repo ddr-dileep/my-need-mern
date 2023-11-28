@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import "./signup.scss";
+import { useState } from "react";
+import "./register.scss";
 import { registerUserService } from "../../../api/services/auth-services";
 import { registerUserFields } from "../constants";
 import Form from "../../../components/form/Form";
 import Heading from "../../../components/heading/Heading";
 
-const Signup = () => {
+const Register = () => {
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -28,9 +28,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup">
-      <div className="signup-container">
-        <Heading className="" title="Sign up" />
+    <div className="register">
+      <div className="register-container">
+        <Heading className="text-center" title="Register user" />
         <Form
           handleSubmit={handleSubmit}
           fields={registerUserFields}
@@ -38,7 +38,7 @@ const Signup = () => {
           handleInputChange={handleInputChange}
           formButtonIcon={loading}
           formButtonDisable={loading}
-          formButtonText={"Signup"}
+          formButtonText={"Register"}
           formButtonType={"submit"}
           formButtonClass={"btn btn-primary w-100 text-center"}
         />
@@ -47,4 +47,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Register;

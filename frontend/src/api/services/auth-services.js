@@ -10,3 +10,14 @@ export const registerUserService = async (data) => {
     }
   }
 };
+
+export const logonUserService = async (data) => {
+  try {
+    const response = await registerUserAPI(data);
+    return response?.data;
+  } catch (error) {
+    if (error.response) {
+      return error.response.data || "An error occurred.";
+    }
+  }
+};

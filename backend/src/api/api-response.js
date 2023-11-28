@@ -7,7 +7,8 @@ const response = (res, statusCode, success, data) => {
 
 const success = (res, data) => response(res, 200, true, data);
 
-const error = (res, data) => response(res, 400, false, data);
+const error = (res, error) =>
+  response(res, 400, false, { errorMessage: error });
 
 const serverError = (res, data) =>
   response(res, 500, false, { ...data, message: "Server error" });
